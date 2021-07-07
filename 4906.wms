@@ -1,0 +1,70 @@
+<THEME>
+<VIEW
+  backgroundColor="none"
+  titleBar = "False">
+  <EFFECTS
+    top="35"
+    left="184"
+    width="80"
+    height="76"/>
+  <VIDEO
+    top="35"
+    left="184"
+    width="80"
+    height="76"/>
+    <PLAYLIST
+    id="plv"
+    top="24"
+    left="17"
+    width="160"
+    height="113"
+    enabled="false"
+    visible="false"/>
+  <SUBVIEW
+  id="plsb"
+  clippingColor = "#FF00FF"
+  transparencyColor = "#EE00EE"
+  backgroundImage = "appendage1.bmp"
+  top="24"
+  left="160"
+  width="17">
+  <BUTTONGROUP
+    mappingImage = "appendage1m.bmp">
+    <BUTTONELEMENT
+      mappingColor = "#00FF00"
+      onClick="JScript:TogglePlaylistSlideout();"
+      upToolTip="View playlists..."/>
+  </BUTTONGROUP>
+  </SUBVIEW>
+  <SUBVIEW
+    clippingColor = "#FF00FF"
+    transparencyColor = "#EE00EE"
+    backgroundImage = "remote.bmp"
+    left="177">
+      <BUTTONGROUP
+        mappingImage = "remotem.bmp">
+          <BUTTONELEMENT
+            mappingColor = "#FF7F00"
+            onClick="JScript:player.controls.previous();"
+            upToolTip="Previous"/>
+          <BUTTONELEMENT
+            id="mmb"
+            mappingColor = "#FF0000"
+            onClick="jscript:ChangeMixMode();"
+            upToolTip="Change mix mode..."/>
+          <BUTTONELEMENT
+            mappingColor = "#0000FF"
+            onClick="jscript:view.returnToMediaCenter();"
+            upToolTip="Return to Full Mode"/>
+          <BUTTONELEMENT
+            mappingColor = "#007FFF"
+            onClick="JScript:player.controls.next();"
+            upToolTip="Next"/>
+          <BUTTONELEMENT
+            mappingColor = "#00FF00"
+            onClick="JScript:TogglePlayPause();"
+            upToolTip="Play/Pause"/>
+      </BUTTONGROUP>
+  </SUBVIEW>
+  </VIEW>
+</THEME>
