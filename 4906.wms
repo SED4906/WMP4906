@@ -1,13 +1,9 @@
 <THEME>
 <VIEW
+  width="448"
   backgroundColor="none"
   titleBar = "False">
   <EFFECTS
-    top="35"
-    left="184"
-    width="80"
-    height="76"/>
-  <VIDEO
     top="35"
     left="184"
     width="80"
@@ -18,8 +14,16 @@
     left="17"
     width="160"
     height="113"
-    enabled="false"
     visible="false"/>
+    <CUSTOMSLIDER
+    id="cpsl"
+    top="73"
+    left="184"
+    min="0"
+    max="wmpprop:player.currentMedia.duration"
+    onmouseup = "player.controls.currentPosition = cpsl.value;"
+    image="semislider.bmp"
+    positionImage="graymap.bmp"/>
   <SUBVIEW
   id="plsb"
   clippingColor = "#FF00FF"
@@ -37,10 +41,27 @@
   </BUTTONGROUP>
   </SUBVIEW>
   <SUBVIEW
+  id="vvsb"
+  clippingColor = "#FF00FF"
+  backgroundImage = "appendage2.bmp"
+  top="24"
+  left="271"
+  width="17">
+  <BUTTONGROUP
+    mappingImage = "appendage2m.bmp">
+    <BUTTONELEMENT
+      mappingColor = "#00FF00"
+      onClick="JScript:ToggleVideoSlideout();"
+      upToolTip="View video..."/>
+  </BUTTONGROUP>
+  </SUBVIEW>
+  <SUBVIEW
+    id="remote"
     clippingColor = "#FF00FF"
     transparencyColor = "#EE00EE"
     backgroundImage = "remote.bmp"
-    left="177">
+    left="177"
+    width="94">
       <BUTTONGROUP
         mappingImage = "remotem.bmp">
           <BUTTONELEMENT
@@ -66,5 +87,18 @@
             upToolTip="Play/Pause"/>
       </BUTTONGROUP>
   </SUBVIEW>
+  <VIDEO
+    backgroundColor="black"
+    id="vve"
+    top="24"
+    left="271"
+    width="160"
+    height="113"
+    windowless="false"
+    visible="false"/>
+  <PLAYER>
+    <CONTROLS
+      currentPosition_onchange = "cpsl.value = player.controls.currentPosition; "/>
+  </PLAYER>
   </VIEW>
 </THEME>

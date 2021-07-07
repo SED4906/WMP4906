@@ -1,8 +1,9 @@
-var slideoutOpen = false;
+var slideout1Open = false;
+var slideout2Open = false;
 var mixMode = 3;
 
 function TogglePlaylistSlideout() {
-  if(!slideoutOpen) {
+  if(!slideout1Open) {
     plsb.left = 0;
     plsb.width = 177;
     plv.enabled = true;
@@ -13,7 +14,20 @@ function TogglePlaylistSlideout() {
     plv.enabled = false;
     plv.visible = false;
   }
-  slideoutOpen = !slideoutOpen;
+  slideout1Open = !slideout1Open;
+}
+
+function ToggleVideoSlideout() {
+  if(!slideout2Open) {
+    vvsb.left = 431;
+    vve.visible = true;
+    remote.width = 254;
+  }else{
+    vvsb.left = 271;
+    vve.visible = false;
+    remote.width = 94;
+  }
+  slideout2Open = !slideout2Open;
 }
 
 function TogglePlayPause() {
